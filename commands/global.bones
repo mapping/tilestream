@@ -1,5 +1,11 @@
 var path = require('path');
 
+Bones.Command.options['forceHost'] = {
+    'title': 'forceHost=[host]',
+    'description': 'Force the app to use this host everywhere',
+    'default': ''
+};
+
 Bones.Command.options['uiPort'] = {
     'title': 'uiPort=[port]',
     'description': 'UI server port.',

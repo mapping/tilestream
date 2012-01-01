@@ -20,6 +20,11 @@ server.prototype.removeTileSubdomain = function(host) {
 };
 
 server.prototype.hostInfo = function(req, res, next) {
+    
+    if(this.config.forceHost){
+    	req.headers.host = this.config.forceHost;
+    }
+    
     req.query.basepath = req.query.basepath || '/';
     if (!req.headers.host) {
         var address = req.socket.address();
